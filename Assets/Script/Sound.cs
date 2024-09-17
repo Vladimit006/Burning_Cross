@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sound
+public class Sound : MonoBehaviour
 {
     public Slider slder;
     public AudioSource audio;
@@ -14,11 +15,12 @@ public class Sound
     {
         Load();
         ValumeMusik();
-
-        toggle = GameObject.FindGameObjectWithTag("Toggle").GetComponent<Toggle>();
-        slder = GameObject.FindGameObjectWithTag("Slider").GetComponent<Slider>();
     }
 
+    public void Update()
+    {
+        SliderMusik();
+    }
     public void SliderMusik()
     {
         volume = slder.value;
